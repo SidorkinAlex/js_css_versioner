@@ -65,7 +65,7 @@ The program first parses the command-line parameters to obtain the file name. It
 до
 
 ```
-<ссылка href="css/owl.carousel.css" rel="таблица стилей">
+<link href="css/owl.carousel.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 ```
 
