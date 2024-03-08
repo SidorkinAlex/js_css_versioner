@@ -54,7 +54,7 @@ func (v *VersionReplace) Execute(source io.Reader, destination io.Writer, versio
 
 	nWrite, errWrite := destination.Write(dstContent)
 	if errWrite != nil {
-		return fmt.Errorf("VersionReplaceService.Replace failed destination write: %w", errRead)
+		return fmt.Errorf("VersionReplaceService.Replace failed destination write: %w", errWrite)
 	}
 	log.Printf("successfully write %d bytes to destination\n", nWrite)
 

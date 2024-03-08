@@ -14,8 +14,8 @@ import (
 func main() {
 
 	log.Println("starting js css versioner...")
-	config := config.ParseCliParams()
-	if len(config.FileName) == 0 {
+	appConfig := config.ParseCliParams()
+	if len(appConfig.FileName) == 0 {
 		log.Fatalln("not set filename, please exec command from key -f , example ./main -f ./index.html")
 	}
 
@@ -24,19 +24,19 @@ func main() {
 		log.Fatalln("cannot init version replace service")
 	}
 
-	tmpFileName := fmt.Sprintf("%s.tmp", config.OutputFilename)
-	if errRpl := replaceFileContent(repl, config.FileName, tmpFileName); errRpl != nil {
+	tmpFileName := fmt.Sprintf("%s.tmp", appConfig.OutputFilename)
+	if errRpl := replaceFileContent(repl, appConfig.FileName, tmpFileName); errRpl != nil {
 		log.Fatalf("replace file content failed: %s\n", errRpl)
 	}
 
-	if config.FileName == config.OutputFilename {
-		if errRm := os.Remove(config.FileName); errRm != nil {
-			log.Fatalf("failed to remove original file: %s\n", config.FileName)
+	if appConfig.FileName == appConfig.OutputFilename {
+		if errRm := os.Remove(appConfig.FileName); errRm != nil {
+			log.Fatalf("remove original file: %s failed: %s\n", appConfig.FileName, errRm)
 		}
 	}
 
-	if errRn := os.Rename(tmpFileName, config.OutputFilename); errRn != nil {
-		log.Fatalf("failed to rename output file: %s\n", config.OutputFilename)
+	if errRn := os.Rename(tmpFileName, appConfig.OutputFilename); errRn != nil {
+		log.Fatalf("rename tmp file: %s to output file: %s failed: %s\n", tmpFileName, appConfig.OutputFilename, errRn)
 	}
 
 	log.Println("js css versioner finished")

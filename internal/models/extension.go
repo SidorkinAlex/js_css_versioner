@@ -6,6 +6,6 @@ type VersionedExtension string
 const (
 	// VersionedExtensionJS - javascript
 	VersionedExtensionJS VersionedExtension = "js"
-	// ExtensionCSS - CSS
+	// VersionedExtensionCSS - CSS
 	VersionedExtensionCSS VersionedExtension = "css"
 )
