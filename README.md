@@ -4,6 +4,10 @@ The program is designed to automatically update the versions of the included Jav
 
 If you use js package builders, then it is better to configure the versioning of js and css files inside the build process
 
+## Thanks for the contribution
+
+[joopinho](https://github.com/joopinho) | [fedordikarev](https://github.com/fedordikarev)
+
 ## Running the Program
 To run the parser, use the following command:
 ```
@@ -42,6 +46,12 @@ The program first parses the command-line parameters to obtain the file name. It
 Программа предназначена для автоматического обновления версий включенных файлов JavaScript (JS) и каскадных таблиц стилей (CSS) в HTML-файле. Это может быть полезно для очистки кэша, гарантируя, что клиенты всегда загружают последние версии этих файлов. Программа принимает HTML-файл в качестве входных данных и обновляет ссылки на файлы JS и CSS параметром версии на основе текущей временной метки.
 
 Если вы используете сборщики пакетов на js то версионирование файлов js и css лучше настроить внутри процесса сборки
+
+
+## Брагодарность за вклад
+
+[joopinho](https://github.com/joopinho) | [fedordikarev](https://github.com/fedordikarev)
+
 
 ## Запуск программы
 Чтобы запустить, используйте следующую команду:
