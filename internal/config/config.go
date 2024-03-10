@@ -1,13 +1,13 @@
-package internal
+package config
 
 import "flag"
 
-type config struct {
+type Config struct {
 	FileName       string
 	OutputFilename string
 }
 
-func ParseCliParams() config {
+func ParseCliParams() Config {
 	var filename string
 	var outputFilename string
 
@@ -15,7 +15,7 @@ func ParseCliParams() config {
 	flag.StringVar(&outputFilename, "o", "", "")
 	flag.Parse()
 
-	config := config{FileName: filename}
+	config := Config{FileName: filename}
 	if len(outputFilename) < 1 {
 		config.OutputFilename = filename
 	} else {

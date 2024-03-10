@@ -1,3 +1,3 @@
-module jsCssVersioner
+module github.com/SidorkinAlex/js_css_versioner
 
-go 1.18
+go 1.21.1
